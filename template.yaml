@@ -22,6 +22,7 @@ Metadata:
     LicenseUrl: LICENSE
     ReadmeUrl: README-SAR.md
     SemanticVersion: 1.0.0
+    SourceCodeUrl: https://github.com/bstraehle/aws-api-lambda-dynamodb
 Resources:
   myLambdaFunction:
     Type: AWS::Serverless::Function
