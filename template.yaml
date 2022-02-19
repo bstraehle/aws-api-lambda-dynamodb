@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: API Gateway/Lambda/DynamoDB demo
+Parameters:
+  TableNameParameter:
+    Type: String
+Globals:
+  Function:
+    Runtime: python3.9
+    MemorySize: 512
+    Environment:
+      Variables:
+        TABLE_NAME:
+          Ref: TableNameParameter
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: demo-sam-app
+    Description: Serverless Application Model (SAM) app using API Gateway, Lambda, and DynamoDB
+    Author: Bernd Straehle
+    SemanticVersion: 1.0.0
+Resources:
+  microservicehttpendpointpython3:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambda_function.lambda_handler
+      CodeUri: .
+      Description: API Gateway/Lambda/DynamoDB demo
+      Timeout: 10
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: TableNameParameter
+      Events:
+        Api1:
+          Type: Api
+          Properties:
+            Path: /MyResource
+            Method: ANY
+  Table:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName:
+        Ref: TableNameParameter
