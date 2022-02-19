@@ -1,19 +1,12 @@
 # Serverless microservice using API Gateway, Lambda, and DynamoDB  
 
-Enter TableName and deploy  
-
-URL:  
-```
-<endpoint>
-```
-
 Tests:
 ```
 curl --location --request GET '<endpoint>'
 ```
 ```
 curl --location --request POST '<endpoint>' \
---header 'Content-Type: application/json' \
+--header 'Content-Type: application/json' \s
 --data-raw '{
 	"Item": {
 		"id": {
@@ -33,10 +26,3 @@ curl --location --request DELETE '<endpoint>' \
 	}
 }'
 ```
-
-Tear down:  
-
-- Go to CloudFormation and delete stack  
-- Go to CloudWatch, log groups, select log group and delete  
-
-Source: https://github.com/bstraehle/aws-api-lambda-dynamodb  
