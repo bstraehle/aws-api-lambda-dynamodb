@@ -14,7 +14,7 @@ Globals:
           Ref: TableName
 Metadata:
   AWS::ServerlessRepo::Application:
-    Name: microservice
+    Name: microservice-api-lambda-dynamodb
     Description: Serverless microservice using API Gateway, Lambda, and DynamoDB
     Author: Bernd Straehle
     Labels: ['serverless', 'sam', 'apigateway', 'lambda', 'dynamodb', 'python']
