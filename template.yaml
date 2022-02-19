@@ -17,7 +17,7 @@ Metadata:
     Name: microservice
     Description: Serverless microservice using API Gateway, Lambda, and DynamoDB
     Author: Bernd Straehle
-    SemanticVersion: 1.0.0
+    SemanticVersion: 1.0.1
 Resources:
   microservicehttpendpointpython3:
     Type: AWS::Serverless::Function
