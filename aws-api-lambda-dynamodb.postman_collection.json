@@ -24,24 +24,6 @@
 			"response": []
 		},
 		{
-			"name": "get item",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://{{domain}}/{{stage}}",
-					"protocol": "https",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"{{stage}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "create item",
 			"request": {
 				"method": "POST",
@@ -69,40 +51,13 @@
 			"response": []
 		},
 		{
-			"name": "update item",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://{{domain}}/{{stage}}",
-					"protocol": "https",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"{{stage}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "delete item",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n\t\"Key\": {\r\n\t\t\"id\": {\r\n\t\t\t\"S\": \"test\"\r\n\t\t}\r\n\t}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
