@@ -9,7 +9,7 @@ Create S3 bucket:
 aws s3 mb s3://<bucket>
 ```
 
-Update policy.json and add account and bucket  
+Update policy.json and add account and bucket info  
 
 Allow read from bucket:  
 ```
