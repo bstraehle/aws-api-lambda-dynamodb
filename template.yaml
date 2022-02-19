@@ -18,8 +18,9 @@ Metadata:
     Description: Serverless microservice using API Gateway, Lambda, and DynamoDB
     Author: Bernd Straehle
     Labels: ['serverless', 'sam', 'apigateway', 'lambda', 'dynamodb', 'python']
+    SpdxLicenseId: GPL-3.0
     LicenseUrl: LICENSE
-    ReadmeUrl: README.md
+    ReadmeUrl: README-SAR.md
     SemanticVersion: 1.0.0
 Resources:
   myLambdaFunction:
