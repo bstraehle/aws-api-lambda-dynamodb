@@ -19,7 +19,7 @@ Metadata:
     Author: Bernd Straehle
     SemanticVersion: 1.0.1
 Resources:
-  microservicehttpendpointpython3:
+  myLambdaFunction:
     Type: AWS::Serverless::Function
     Properties:
       Handler: lambda_function.lambda_handler
@@ -36,20 +36,29 @@ Resources:
           Properties:
             Path: /
             Method: ANY
-  Table:
+  myDynamoDBTable: 
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions: 
         - 
-          AttributeName: "id"
+          AttributeName: "Album"
           AttributeType: "S"
         - 
-          AttributeName: "name"
+          AttributeName: "Artist"
           AttributeType: "S"
+        - 
+          AttributeName: "Sales"
+          AttributeType: "N"
+        - 
+          AttributeName: "NumberOfSongs"
+          AttributeType: "N"
       KeySchema: 
         - 
-          AttributeName: "id"
+          AttributeName: "Album"
           KeyType: "HASH"
+        - 
+          AttributeName: "Artist"
+          KeyType: "RANGE"
       ProvisionedThroughput: 
         ReadCapacityUnits: "1"
         WriteCapacityUnits: "1"
