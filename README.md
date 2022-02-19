@@ -1,35 +1,37 @@
-<a href="https://aws.amazon.com/cli/">Install AWS CLI</a>  (alternatively, use CloudShell)  
-
-<a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html">Install AWS SAM CLI</a> (alternatively, use CloudShell)  
-
-Initialize application (1, 1, enter, 1)  
+Clone repo:  
 ```
-sam init --runtime python3.9
+git clone https://github.com/bstraehle/aws-api-lambda-dynamodb.git
+cd aws-api-lambda-dynamodb
 ```
 
-Create files lambda_function.py, policy.json, and template.yaml  
-
-Create S3 bucket  
+Create S3 bucket:  
 ```
 aws s3 mb s3://<bucket>
 ```
 
-Allow read from bucket  
+Update policy.json and add account and bucket  
+
+Allow read from bucket:  
 ```
 aws s3api put-bucket-policy --bucket <bucket> --policy file://policy.json
 ```
 
-Package application  
+Package application:  
 ```
 sam package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket <bucket>
 ```
 
-Publish application  
+Publish application:  
 ```
 sam publish --template packaged.yaml --region <region>
 ```
 
 Login to the AWS Console and deploy application  
+
+URL:  
+```
+<endpoint>
+```
 
 Tear down:  
 

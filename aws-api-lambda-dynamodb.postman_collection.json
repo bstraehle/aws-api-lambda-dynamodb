@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "c6befaa2-e673-42d0-80a6-67d44926cd72",
+		"name": "aws-api-lambda-dynamodb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{domain}}/{{stage}}",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"{{stage}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{domain}}/{{stage}}",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"{{stage}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Item\": {\r\n\t\t\"id\": {\r\n\t\t\t\"S\": \"test\"\r\n\t\t}\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/{{stage}}",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"{{stage}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/{{stage}}",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"{{stage}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/{{stage}}",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"{{stage}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
