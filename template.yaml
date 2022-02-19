@@ -17,7 +17,10 @@ Metadata:
     Name: microservice
     Description: Serverless microservice using API Gateway, Lambda, and DynamoDB
     Author: Bernd Straehle
-    SemanticVersion: 1.0.1
+    Labels: ['serverless', 'sam', 'apigateway', 'lambda', 'dynamodb', 'python']
+    LicenseUrl: LICENSE
+    ReadmeUrl: README.md
+    SemanticVersion: 1.0.0
 Resources:
   myLambdaFunction:
     Type: AWS::Serverless::Function
@@ -36,31 +39,8 @@ Resources:
           Properties:
             Path: /
             Method: ANY
-  myDynamoDBTable: 
-    Type: AWS::DynamoDB::Table
+  myDynamoDBTable:
+    Type: AWS::Serverless::SimpleTable
     Properties:
-      AttributeDefinitions: 
-        - 
-          AttributeName: "Album"
-          AttributeType: "S"
-        - 
-          AttributeName: "Artist"
-          AttributeType: "S"
-        - 
-          AttributeName: "Sales"
-          AttributeType: "N"
-        - 
-          AttributeName: "NumberOfSongs"
-          AttributeType: "N"
-      KeySchema: 
-        - 
-          AttributeName: "Album"
-          KeyType: "HASH"
-        - 
-          AttributeName: "Artist"
-          KeyType: "RANGE"
-      ProvisionedThroughput: 
-        ReadCapacityUnits: "1"
-        WriteCapacityUnits: "1"
       TableName:
         Ref: TableName
