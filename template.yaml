@@ -15,7 +15,7 @@ Globals:
 Metadata:
   AWS::ServerlessRepo::Application:
     Name: microservice
-    Description: Serverless microservice using API Gateway, Lambda, and DynamoDB
+    Description: Serverless microservice using API Gateway, Lambda, and DynamoDB 2
     Author: Bernd Straehle
     SemanticVersion: 1.0.0
 Resources:
