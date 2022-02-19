@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: Serverless microservice using API Gateway, Lambda, and DynamoDB 1
+Description: Serverless microservice using API Gateway, Lambda, and DynamoDB
 Parameters:
   TableName:
     Type: String
@@ -15,7 +15,7 @@ Globals:
 Metadata:
   AWS::ServerlessRepo::Application:
     Name: microservice
-    Description: Serverless microservice using API Gateway, Lambda, and DynamoDB 2
+    Description: Serverless microservice using API Gateway, Lambda, and DynamoDB
     Author: Bernd Straehle
     SemanticVersion: 1.0.0
 Resources:
@@ -24,7 +24,7 @@ Resources:
     Properties:
       Handler: lambda_function.lambda_handler
       CodeUri: .
-      Description: Serverless microservice using API Gateway, Lambda, and DynamoDB 3
+      Description: Serverless microservice using API Gateway, Lambda, and DynamoDB
       Timeout: 10
       Policies:
       - DynamoDBCrudPolicy:
