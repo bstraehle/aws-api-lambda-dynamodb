@@ -32,4 +32,4 @@ Tear down:
 
 - Go to CloudFormation and delete application stack  
 - Go to CloudWatch, log groups, select log group and delete  
-- Go to S3 and delete bucket  
+- Go to S3 and empty and delete bucket  
