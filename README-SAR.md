@@ -1,6 +1,6 @@
 # Serverless microservice using API Gateway, Lambda, and DynamoDB  
 
-Tests:
+Tests:  
 ```
 curl --location --request GET '<endpoint>'
 ```

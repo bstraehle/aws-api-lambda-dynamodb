@@ -28,11 +28,6 @@ sam publish --template packaged.yaml --region <region>
 
 Login to the AWS Console and deploy application  
 
-URL:  
-```
-<endpoint>
-```
-
 Tear down:  
 
 - Go to CloudFormation and delete application stack  
