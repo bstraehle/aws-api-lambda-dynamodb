@@ -1,6 +1,11 @@
 # Serverless microservice using API Gateway, Lambda, and DynamoDB  
 
+Start up:  
+
+- Deploy application, specifying table name  
+
 Tests:  
+
 ```
 curl --location --request GET '<endpoint>'
 curl --location --request POST '<endpoint>' \
