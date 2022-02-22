@@ -31,5 +31,5 @@ Login to the AWS Console and deploy application
 Tear down:  
 
 - Go to CloudFormation and delete application stack  
-- Go to CloudWatch, log groups, select log group and delete  
+- Go to CloudWatch, log groups, log group and delete  
 - Go to S3 and empty and delete bucket  
