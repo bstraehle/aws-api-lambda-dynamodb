@@ -37,7 +37,7 @@ Resources:
           TableName:
             Ref: TableName
       Events:
-        Api1:
+        APIEvent:
           Type: Api
           Properties:
             Path: /
