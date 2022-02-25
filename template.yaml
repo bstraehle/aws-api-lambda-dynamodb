@@ -15,7 +15,7 @@ Globals:
 Metadata:
   AWS::ServerlessRepo::Application:
     Name: microservice-api-lambda-dynamodb
-    Description: Serverless microservice using API Gateway, Lambda, and DynamoDB. The service is implemented in Python and supports NoSQL CRUD operations.
+    Description: Serverless microservice using API Gateway, Lambda, and DynamoDB. The Python service implements NoSQL CRUD operations.
     Author: Bernd Straehle
     Labels: ['serverless', 'sam', 'apigateway', 'lambda', 'dynamodb', 'python']
     SpdxLicenseId: GPL-3.0-or-later
