@@ -15,7 +15,7 @@ Globals:
 Metadata:
   AWS::ServerlessRepo::Application:
     Name: microservice-api-lambda-dynamodb
-    Description: Serverless microservice using API Gateway, Lambda, and DynamoDB. The Python Lambda service is invoked by API Gateway and implements DynamoDB CRUD operations. For encrypted environment variables, see the instruction in the function code.
+    Description: Serverless microservice using API Gateway, Lambda, and DynamoDB. The Python Lambda service is invoked by API Gateway and implements DynamoDB CRUD operations. For encrypted environment variables, see the instructions in the function code.
     Author: Bernd Straehle
     Labels: ['serverless', 'sam', 'apigateway', 'lambda', 'dynamodb', 'python']
     SpdxLicenseId: GPL-3.0-or-later
