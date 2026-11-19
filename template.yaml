@@ -4,25 +4,32 @@ Description: Serverless microservice using API Gateway, Lambda, and DynamoDB
 Parameters:
   TableName:
     Type: String
+    Description: Name of the DynamoDB table to create
+  LogRetentionInDays:
+    Type: Number
+    Default: 14
+    AllowedValues: [1, 3, 5, 7, 14, 30, 60, 90, 180, 365]
+    Description: Number of days to retain Lambda function logs
 Globals:
   Function:
-    Runtime: python3.9
+    Runtime: python3.14
+    Architectures:
+      - arm64
     MemorySize: 512
     Environment:
       Variables:
-        TABLE_NAME:
-          Ref: TableName
+        TABLE_NAME: !Ref TableName
 Metadata:
   AWS::ServerlessRepo::Application:
     Name: microservice-api-lambda-dynamodb
     Description: Serverless microservice using API Gateway, Lambda, and DynamoDB. The Python Lambda service is invoked by API Gateway and implements DynamoDB CRUD operations. For encrypted environment variables, see the instructions in the function code.
     Author: Bernd Straehle
     Labels: ['serverless', 'sam', 'apigateway', 'lambda', 'dynamodb', 'python']
-    SpdxLicenseId: GPL-3.0-or-later
+    SpdxLicenseId: Apache-2.0
     LicenseUrl: LICENSE
     ReadmeUrl: README-SAR.md
     HomePageUrl: https://github.com/bstraehle
-    SemanticVersion: 1.0.0
+    SemanticVersion: 2.0.0
     SourceCodeUrl: https://github.com/bstraehle/aws-api-lambda-dynamodb
 Resources:
   myLambdaFunction:
@@ -32,18 +39,32 @@ Resources:
       CodeUri: .
       Description: Serverless microservice using API Gateway, Lambda, and DynamoDB
       Timeout: 10
+      LoggingConfig:
+        LogGroup: !Ref myLogGroup
       Policies:
-      - DynamoDBCrudPolicy:
-          TableName:
-            Ref: TableName
+        - DynamoDBCrudPolicy:
+            TableName: !Ref TableName
       Events:
         ApiEvent:
           Type: Api
           Properties:
             Path: /
             Method: ANY
+  myLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      RetentionInDays: !Ref LogRetentionInDays
   myDynamoDBTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
-      TableName:
-        Ref: TableName
+      TableName: !Ref TableName
+Outputs:
+  ApiUrl:
+    Description: API Gateway endpoint URL
+    Value: !Sub https://${ServerlessRestApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/Prod/
+  FunctionName:
+    Description: Lambda function name
+    Value: !Ref myLambdaFunction
+  TableName:
+    Description: DynamoDB table name
+    Value: !Ref myDynamoDBTable
