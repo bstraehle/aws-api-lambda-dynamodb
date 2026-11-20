@@ -6,17 +6,6 @@ Available in the [AWS Serverless Application Repository](https://serverlessrepo.
 
 ![Architecture](architecture.png)
 
-```mermaid
-flowchart LR
-    client([HTTP client]) -- HTTPS --> api[API Gateway<br/>REST API ANY /]
-    subgraph stack [AWS SAM application]
-        api -- proxy integration --> fn[Lambda function<br/>python3.14 arm64]
-        fn -- Scan / PutItem / UpdateItem / DeleteItem --> ddb[(DynamoDB table)]
-        role[IAM execution role] -. assumes .-> fn
-        fn -. logs .-> logs[CloudWatch Logs]
-    end
-```
-
 ## Prerequisites
 
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
